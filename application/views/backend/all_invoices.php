@@ -63,7 +63,6 @@
                                                
                                                 <form method="post" action="<?= site_url('invoice/delete'); ?>">
                                                     <input type="hidden" name="id" value="<?= $d->id ?>">
-                                                    <input type="hidden" name="data" value="<?= $cargo->uniqueID.'_'.$cargo->id ?>">
                                                     <button type="button" data-dismiss="modal" class="button w-24 border text-gray-700 mr-1">Cancel</button>
                                                 <button type="submit" class="button w-24 bg-theme-6 text-white">Delete</button>
                                                 </form>
