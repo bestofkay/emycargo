@@ -13,10 +13,11 @@ License: You must have a valid license purchased only from themeforest(the above
     <head>
         <meta charset="utf-8">
         <link href="<?= base_url() ?>public/dist/images/logo.svg" rel="shortcut icon">
+        <link href="<?= base_url() ?>public/dist/images/logo.svg" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
-        <meta name="keywords" content="admin template, Midone admin template, dashboard template, flat admin template, responsive admin template, web app">
-        <meta name="author" content="LEFT4CODE">
+        <meta name="description" content="EMY Cargo Terminal Admin Login">
+        <meta name="keywords" content="">
+        <meta name="author" content="kayode Faluyi">
         <title>Login - EMY Cargo</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="<?= base_url() ?>public/dist/css/app.css" />

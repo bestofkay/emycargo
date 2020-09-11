@@ -1,10 +1,13 @@
-<html lang="en"><head>
+<html lang="en">
+    <head>  
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="kayode Faluyi">
+        <link href="<?= base_url() ?>public/dist/images/logo.svg" rel="shortcut icon">
+    <title>Invoice</title>
 <style>
     .body{margin:1% 10%; width: 78%; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
     .mid_body{ width:45%; margin: 2.5%;}
@@ -25,18 +28,35 @@ p{font-size: 13px; margin:7px}
   padding: 8px;
 }
 
-@media print and (min-height:335mm) and (max-height: 305mm) {
-    .chrome.container::before { content: "EXECUTIVE"; }
+@media print{
+    .chrome.container::before { content: "A4"; }
 	.page-break	{ display: block; page-break-before: always; };
-     thead   { display: table-header-group;};
      
+    .body{margin:20% 10%; width: 80%; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+    .mid_body{ width:45%; margin: 2.5%;}
+    .row{display: flex}
+    .column1{flex: 60%}
+    .column2{flex: 40%}
+    .invoice-text{text-align: center; margin:1px}
+    #customers {
+ 
+  border-collapse: collapse;
+  width: 100%;
+}
+.p_d > p{text-align: left;}
+p{font-size: 13px; margin:7px}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  font-size: 12px;
+  padding: 8px;
+}
+#clickMe{ display:none;}
+
 @page{
     size: 335mm 305mm;
 }
 }
-@page{
-    size: 335mm 305mm;
-}
+
 </style>
 </head>
 <button id="clickMe" onclick="window.print()">Print/Save Invoice</button>
@@ -207,12 +227,12 @@ p{font-size: 13px; margin:7px}
                    </th>
                   
                </tr>
-
+                
                <tr>
-                   <th colspan="3" style="border-top: 2px solid #fff;border-right: 2px solid #fff;"><hr><span>Prepared By</span></th>
-                   <th colspan="4" style="border-top: 2px solid #fff;border-right: 2px solid #fff;"><hr><span>Checked By</span></th>
-                   <th colspan="4" style="border-top: 2px solid #fff;"><hr><span>Approved By</span></th>
-               </tr>
+                   <th colspan="3" style="border-top: 2px solid #fff;border-right: 2px solid #fff;"><br><br><hr><span>Prepared By</span></th>
+                   <th colspan="4" style="border-top: 2px solid #fff;border-right: 2px solid #fff;"><br><br><hr><span>Checked By</span></th>
+                   <th colspan="4" style="border-top: 2px solid #fff;"><br><br><hr><span>Approved By</span></th>
+               </>
            </table>
            
         </div>
