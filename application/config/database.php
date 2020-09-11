@@ -72,16 +72,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-
+//mysql://b3c199959a99ac:4d549851@us-cdbr-east-02.cleardb.com/heroku_56902a7ee67b883?reconnect=true
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'us-cdbr-east-02.cleardb.com',
 	//'username' => 'firmtgtd_root',
 	//'password' => 'ez[3N8IeS3Jv',
 	//'database' => 'firmtgtd_tutor',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'meat',
+	'username' => 'b3c199959a99ac',
+	'password' => '4d549851',
+	'database' => 'heroku_56902a7ee67b883',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
