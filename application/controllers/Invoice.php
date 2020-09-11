@@ -106,7 +106,12 @@ class Invoice extends MY_Controller
     $data=$this->input->post('data');
     $this->Invoice_model->delete($id);
     $this->session->set_flashdata('message', 'invoice deleted successfully');
-    redirect(site_url('invoice/cargo/'.$data));
+    if(isset($data) && !empty($data)){
+        redirect(site_url('invoice/cargo/'.$data));
+    }else{
+        redirect(site_url('invoice/'));
+    }
+   
 }
 
 
