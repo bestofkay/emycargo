@@ -5,7 +5,7 @@
  * @property Ion_auth|Ion_auth_model $ion_auth        The ION Auth spark
  * @property CI_Form_validation      $form_validation The form validation library
  */
-class Roles extends MY_Controller
+class Permissions extends MY_Controller
 {
 	public function __construct()
 	{
@@ -83,7 +83,7 @@ class Roles extends MY_Controller
 
 public function delete()
 {
-    $id=$this->post('role_id');
+    $id=$this->input->post('role_id');
     $this->Admin_model->delete_roup($id);
     $this->session->set_flashdata('message', 'role deleted successfully');
     redirect(site_url('roles')); 

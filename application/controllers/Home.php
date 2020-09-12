@@ -11,7 +11,7 @@ class Home extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->database();
-		$this->load->library(array('ion_auth', 'form_validation'));
+		$this->load->library(array('ion_auth', 'form_validation','important'));
 		$this->load->helper(array('url', 'language'));
 		$this->load->model(array('Clients_model', 'Cargos_model', 'Admin_model'));
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
@@ -24,7 +24,12 @@ class Home extends MY_Controller
 	 */
 	public function index()
 	{
-
+		$class= $this->router->fetch_class();
+		$route = $this->router->fetch_method();
+		$operation='View';
+		$desc='Dashboard';
+		$link='home';
+		$this->important->add_links($class, $route, $operation, $desc, $link);
 		if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
@@ -51,7 +56,10 @@ class Home extends MY_Controller
 			$this->data['group'] = $this->ion_auth->get_users_groups($user->id)->result();
 			$this->data['total_clients'] = count($this->Clients_model->get_clients());
 			$this->data['total_cargos'] = count($this->Cargos_model->get_cargo(0));
-			
+			$this->important->audit_trail($user->id, 'staff', date('Y-m-d h:i:s'), 'Read', 'users', 'viewing dashboard');
+			//$re=$this->important->sendMail('olu@meen.com', 'Olu min', 'bestofkay@gmail.com', 'Olu Kay', 'topic', 'Is it working dashboard');
+			//var_dump($re);exit;
+
 			$this->render('backend/home', $this->data);
 		}
 	}
@@ -865,5 +873,7 @@ class Home extends MY_Controller
 			return $view_html;
 		}
 	}
+
+
 
 }

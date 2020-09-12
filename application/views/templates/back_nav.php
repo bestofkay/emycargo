@@ -179,21 +179,21 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu <?php if(strtolower($controller)=='settings'){ echo 'side-menu--active';}?>">
                         <div class="side-menu__icon"> <i data-feather="box"></i> </div>
                         <div class="side-menu__title"> Settings <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                     </a>
-                    <ul class="">
+                    <ul class="<?php if(strtolower($controller)=='settings'){ echo 'side-menu__sub-open';}?>">
                         <li>
-                            <a href="" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> Set tariffs </div>
+                            <a href="<?=  site_url('settings/terminal_charges') ?>" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="dollar-sign"></i> </div>
+                                <div class="side-menu__title"> Set Terminal Charges </div>
                             </a>
                         </li>
                         <li>
-                            <a href="" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> Other settings </div>
+                            <a href="<?=  site_url('settings/company') ?>" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+                                <div class="side-menu__title"> Company settings </div>
                             </a>
                         </li>
                     </ul>
