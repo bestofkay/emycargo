@@ -59,7 +59,6 @@ class Home extends MY_Controller
 			$this->important->audit_trail($user->id, 'staff', date('Y-m-d h:i:s'), 'Read', 'users', 'viewing dashboard');
 			//$re=$this->important->sendMail('olu@meen.com', 'Olu min', 'bestofkay@gmail.com', 'Olu Kay', 'topic', 'Is it working dashboard');
 			//var_dump($re);exit;
-
 			$this->render('backend/home', $this->data);
 		}
 	}
